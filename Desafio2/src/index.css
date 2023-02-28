@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+}
+
+body {
+  background: linear-gradient(
+    95deg,
+    rgba(61, 60, 82, 1) 0%,
+    rgba(165, 165, 181, 1) 47%,
+    rgba(129, 152, 157, 1) 96%
+  );
+  color: #ccc;
+}
+
+nav {
+  background: linear-gradient(
+    190deg,
+    rgb(28, 57, 63) 10%,
+    rgb(34, 34, 43) 50%,
+    rgb(64, 32, 68) 98%
+  );
+}
+
+a {
+  margin: 10px;
+}
+
+.card-images {
+  border: 5px solid black;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.img-home {
+  width: 50%;
+  height: 50%;
+  transition: 1.5s ease-out;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.scaled {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+}
+
+.img-home:hover {
+  transform: scale(1.1);
+}
+
+.move-up {
+  margin-top: -50px;
+  transition: 1.5s ease-out;
+}
+
+.move-down {
+  margin-bottom: -50px;
+  transition: 1.5s ease-out;
+}
+
+.bgdegre {
+  background: linear-gradient(
+    190deg,
+    rgb(34, 34, 43) 25%,
+    rgb(55, 25, 59) 50%,
+    rgb(15, 42, 48) 75%
+  );
+}
+
+footer {
+  background: linear-gradient(
+    90deg,
+    rgb(28, 57, 63) 10%,
+    rgb(34, 34, 43) 50%,
+    rgb(64, 32, 68) 98%
+  );
+}
