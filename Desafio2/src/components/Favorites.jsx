@@ -14,8 +14,8 @@ const Favorites = ({ favorites, images, onFavoritesChange }) => {
   }, [favorites]);
 
   return (
-    <div className="mt-5">
-      {showFavorites && <h2 className="border-bottom rounded m-5">Favorite</h2>}
+    <div className="">
+      {showFavorites && <h2 className="border-bottom rounded m-4">Favorite</h2>}
       <div className="row">
         {images
           .filter((image) => favorites.includes(image.id))

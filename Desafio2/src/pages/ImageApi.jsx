@@ -93,12 +93,19 @@ const ImageApi = () => {
           </button>
         )}
       </div>
-      <Favorites
-              favorites={favorites}
-              images={images}
-              onFavoritesChange={handleFavoritesChange}
-            />
-            <h1 className="border-bottom rounded m-5">Image Bank</h1>
+      <div>
+      {favorites.length > 0 && (
+  <button onClick={() => setFavorites([])} className="btn btn-danger mt-3">
+    Reset
+  </button>
+)}
+        <Favorites
+          favorites={favorites}
+          images={images}
+          onFavoritesChange={handleFavoritesChange}
+        />
+      </div>
+      <h1 className="border-bottom rounded m-5">Image Bank</h1>
       <div className="row">
         {images.map((image) => (
           <div key={image.id} className="col-md-4 col-sm-6 col-lg-3 p-2">
