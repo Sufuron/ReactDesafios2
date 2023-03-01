@@ -10,7 +10,7 @@ const Navbar = () => {
           className="btn btn-outline-secondary text-decoration-none text-white"
           to="/"
         >
-          Inicio
+          Home
         </NavLink>
         <NavLink
           exact
@@ -18,7 +18,7 @@ const Navbar = () => {
           className="btn btn-outline-secondary text-decoration-none text-white"
           to="/ImageApi"
         >
-          Imagenes
+          Image
         </NavLink>
         <NavLink
           exact
@@ -26,7 +26,7 @@ const Navbar = () => {
           className="btn btn-outline-secondary text-decoration-none text-white"
           to="/Contact"
         >
-          Contacto
+          Contact
         </NavLink>
       </ul>
     </nav>
