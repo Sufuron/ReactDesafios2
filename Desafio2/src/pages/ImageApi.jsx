@@ -121,6 +121,25 @@ const ImageApi = () => {
           </div>
         ))}
       </div>
+      {pages.map((page) => (
+          <button
+            key={page}
+            className={`btn btn-outline-secondary mx-2 ${
+              currentPage === page ? "active" : ""
+            }`}
+            onClick={() => changePage(page)}
+          >
+            {page}
+          </button>
+        ))}
+        {currentPage < totalPages && (
+          <button
+            className="btn btn-outline-secondary mx-2"
+            onClick={() => changePage(currentPage + 1)}
+          >
+            Next
+          </button>
+        )}
     </div>
   );
 };
