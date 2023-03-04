@@ -14,7 +14,7 @@ const Favorites = ({ favorites, images, onFavoritesChange }) => {
   }, [favorites]);
 
   return (
-    <div className="">
+    <div>
       {showFavorites && <h2 className="border-bottom rounded m-4">Favorite</h2>}
       <div className="row">
         {images

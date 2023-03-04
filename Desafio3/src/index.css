@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+}
+
+body {
+  background: linear-gradient(
+    95deg,
+    rgba(61, 60, 82, 1) 0%,
+    rgba(165, 165, 181, 1) 47%,
+    rgba(129, 152, 157, 1) 96%
+  );
+  color: #ccc;
+}
+
+.bg-text {
+  background: linear-gradient(
+    190deg,
+    rgba(28, 57, 63, 0.664) 10%,
+    rgba(34, 34, 43, 0.451) 50%,
+    rgba(64, 32, 68, 0.59) 98%
+  );
+}
+
+.border-design-card {
+  border-radius: 40px;
+  border: 1px solid rgb(60, 11, 61);
+  padding: 10px;
+  margin: 20px;
+}
+
+.loading-text {
+  margin-top: 100px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  border-bottom: 2px solid white;
+  border-radius: 40px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.p-pokemon {
+  margin-bottom: -15px;
+}
+
+.nombre-pokemon {
+  font-size: 20px;
+}
+
+.pokemon-img {
+  cursor: pointer;
+  transition: all 1.5s;
+}
+
+.pokemon-img:hover {
+  transform: scale(1.1);
+}
+
+.card-img-top {
+  transition: all 1.5s;
+}
+
+.card-img-top:hover {
+  transform: scale(1.4);
+}
+
+nav {
+  background: linear-gradient(
+    190deg,
+    rgb(28, 57, 63) 10%,
+    rgb(34, 34, 43) 50%,
+    rgb(64, 32, 68) 98%
+  );
+}
+
+.bgdegre {
+  background: linear-gradient(
+    190deg,
+    rgb(34, 34, 43) 25%,
+    rgb(55, 25, 59) 50%,
+    rgb(15, 42, 48) 75%
+  );
+}
+
+footer {
+  background: linear-gradient(
+    90deg,
+    rgb(28, 57, 63) 10%,
+    rgb(34, 34, 43) 50%,
+    rgb(64, 32, 68) 98%
+  );
+}
