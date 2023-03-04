@@ -1,9 +1,17 @@
 import React from "react";
+import { types } from "./colors";
 
 const PokemonInfo = ({ details }) => {
+  let borderColor = "#000000";
+  if (details.types) {
+    const type = details.types[0].type.name;
+    const typeInfo = types.find((t) => t.type === type);
+    borderColor = typeInfo ? typeInfo.color : "#000000";
+  }
+
   return (
     <div className="col-12">
-      <div className="card m-2 bg-text">
+       <div className="card m-2 bg-text m-5" style={{ border: "10px solid " + borderColor }}>
         <div className="card-header">
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${details.id}.png`}

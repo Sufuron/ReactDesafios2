@@ -1,6 +1,7 @@
 import React from "react";
 import PokemonApi from "../components/PokemonApi";
 
+
 const Pokemons = () => {
   return (
     <>

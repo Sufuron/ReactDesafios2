@@ -61,7 +61,7 @@ const PokemonApi = () => {
       ) : selectedPokemon ? (
         <PokemonDetails pokemon={selectedPokemon} onGoBack={handleGoBack} />
       ) : pokemon.length ? (
-        <PokemonList pokemon={pokemon} onPokemonSelect={handlePokemonSelect} />
+        <PokemonList pokemon={pokemon} onPokemonSelect={handlePokemonSelect}/>
       ) : null}
     </div>
   );
