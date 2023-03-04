@@ -16,7 +16,7 @@ const Navbar = () => {
           exact
           activeClassName="btn-outline-secondary active"
           className="btn btn-outline-secondary text-decoration-none text-white m-2"
-          to="/Pokemons"
+          to="/pokemons"
         >
           Pokemons
         </NavLink>
@@ -24,7 +24,7 @@ const Navbar = () => {
           exact
           activeClassName="btn-outline-secondary active"
           className="btn btn-outline-secondary text-decoration-none text-white"
-          to="/Contact"
+          to="/contact"
         >
           Contact
         </NavLink>

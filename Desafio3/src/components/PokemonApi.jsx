@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import PokemonList from "./PokemonList";
 import PokemonTypeButtons from "./PokemonTypeButtons";
@@ -6,10 +7,10 @@ import PokemonDetails from "./PokemonDetails";
 
 const PokemonApi = () => {
   const [pokemon, setPokemon] = useState([]);
-  const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [pokemonType, setPokemonType] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!pokemonType) return;
@@ -33,36 +34,41 @@ const PokemonApi = () => {
     setPokemonType(type);
   };
 
-  const handlePokemonSelect = (pokemon) => {
-    setSelectedPokemon(pokemon);
-  };
-
-  const handleGoBack = () => {
-    setSelectedPokemon(null);
-  };
-
   return (
     <div className="container my-5 text-black">
       <div className="row">
         <PokemonTypeButtons handleClick={handleClick} />
       </div>
-      {error ? (
-        <div className="row">
-          <div className="col-12">
-            <p>Type not found!</p>
-          </div>
-        </div>
-      ) : loading ? (
-        <div className="row">
-          <div className="col-12">
-            <h2 className="loading-text">Loading...</h2>
-          </div>
-        </div>
-      ) : selectedPokemon ? (
-        <PokemonDetails pokemon={selectedPokemon} onGoBack={handleGoBack} />
-      ) : pokemon.length ? (
-        <PokemonList pokemon={pokemon} onPokemonSelect={handlePokemonSelect}/>
-      ) : null}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            error ? (
+              <div className="row">
+                <div className="col-12">
+                  <p>Type not found!</p>
+                </div>
+              </div>
+            ) : loading ? (
+              <div className="row">
+                <div className="col-12">
+                  <h2 className="loading-text">Loading...</h2>
+                </div>
+              </div>
+            ) : (
+              <PokemonList
+                pokemon={pokemon}
+                onPokemonSelect={(pokemon) => {
+                  setPokemon([]);
+                  setPokemonType("");
+                  navigate(`/pokemon/${pokemon.pokemon.url.split("/")[6]}`);
+                }}
+              />
+            )
+          }
+        />
+        <Route path="/pokemon/:id" element={<PokemonDetails />} />
+      </Routes>
     </div>
   );
 };

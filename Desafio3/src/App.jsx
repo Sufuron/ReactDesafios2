@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import PokemonDetails from "./components/PokemonDetails"
 
 import Home from "./pages/Home"
 import Pokemons from "./pages/Pokemons"
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pokemons" element={<Pokemons />} />
+          <Route path="/pokemon/:id" element={<PokemonDetails />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

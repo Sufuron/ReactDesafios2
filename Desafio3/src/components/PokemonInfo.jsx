@@ -11,7 +11,10 @@ const PokemonInfo = ({ details }) => {
 
   return (
     <div className="col-12">
-       <div className="card m-2 bg-text m-5" style={{ border: "10px solid " + borderColor }}>
+      <div
+        className="card m-2 bg-text m-5"
+        style={{ border: "10px solid " + borderColor }}
+      >
         <div className="card-header">
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${details.id}.png`}
