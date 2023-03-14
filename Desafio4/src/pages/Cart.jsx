@@ -4,6 +4,7 @@ import { CartContext } from "../components/CartContext";
 const Cart = () => {
   const { order, setOrder } = useContext(CartContext);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   const calculateTotalPrice = (storedOrder) => {
     const total = Object.values(storedOrder).reduce(
@@ -16,8 +17,11 @@ const Cart = () => {
   useEffect(() => {
     const storedOrder = JSON.parse(localStorage.getItem("order")) || {};
     setOrder(storedOrder);
-    calculateTotalPrice(storedOrder);
-  }, []);
+  }, [setOrder]);
+
+  useEffect(() => {
+    calculateTotalPrice(order);
+  }, [order]);
 
   const handleClearCart = () => {
     localStorage.removeItem("order");
@@ -45,8 +49,23 @@ const Cart = () => {
     calculateTotalPrice(newOrder);
   };
 
+  const handlePayment = () => {
+    if (Object.keys(order).length > 0) {
+      setPaymentSuccess(true);
+      handleClearCart();
+      setTimeout(() => {
+        setPaymentSuccess(false);
+      }, 2000);
+    }
+  };
+
   return (
     <>
+      {paymentSuccess && (
+        <div className="alert alert-success text-center" role="alert">
+          Payment successful!
+        </div>
+      )}
       {Object.keys(order).length === 0 ? (
         <p>No items in the cart</p>
       ) : (
@@ -93,9 +112,14 @@ const Cart = () => {
             </tbody>
           </table>
           <h5>Total: {totalPrice}</h5>
-          <button className="btn btn-danger" onClick={handleClearCart}>
-            Clear Cart
-          </button>
+          <div className="d-flex justify-content-between">
+            <button className="btn btn-danger" onClick={handleClearCart}>
+              Clear Cart
+            </button>
+            <button className="btn btn-primary" onClick={handlePayment}>
+              Go To Pay
+            </button>
+          </div>
         </>
       )}
     </>
