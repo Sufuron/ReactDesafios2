@@ -24,30 +24,34 @@ const PizzaDetails = () => {
   };
 
   return (
-    <div className="d-flex bgdegre rounded mt-5">
-      <img
-        src={pizza.img}
-        className="rounded"
-        style={{ width: "500px", height: "500px" }}
-      />
-      <div className="m-3">
-        <h2>
-          <b>{pizza.name}</b>
-        </h2>
-        <p>{pizza.desc}</p>
-        <ul>
-          {pizza.ingredients.map((ingredient) => (
-            <li key={ingredient}>{ingredient}</li>
-          ))}
-        </ul>
-        <h5>Price: {pizza.price}</h5>
-        <div className="d-flex justify-content-between mt-3">
-          <Link to="/" className="btn btn-secondary">
-            Go back
-          </Link>
-          <button className="btn btn-primary" onClick={handleAddToCart}>
-            Add to Cart
-          </button>
+    <div className="container mt-5 bgdegre p-2">
+      <div className="row">
+        <div className="col-md-6">
+          <img
+            src={pizza.img}
+            className="rounded img-fluid"
+            alt={pizza.name}
+          />
+        </div>
+        <div className="col-md-6">
+          <h2>
+            <b>{pizza.name}</b>
+          </h2>
+          <p>{pizza.desc}</p>
+          <ul>
+            {pizza.ingredients.map((ingredient) => (
+              <li key={ingredient}>{ingredient}</li>
+            ))}
+          </ul>
+          <h5>Price: {pizza.price}</h5>
+          <div className="d-flex justify-content-between mt-3">
+            <Link to="/" className="btn btn-secondary">
+              Go back
+            </Link>
+            <button className="btn btn-primary" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>
