@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+    font-size: 16px;
+}
+
+body {
+  background: linear-gradient(
+    95deg,
+    rgb(174, 173, 184) 0%,
+    rgb(185, 185, 197) 47%,
+    rgb(192, 204, 206) 96%
+  );
+  color: #ccc;
+}
+
+.image-pizza {
+    width: 400px;
+    height: 300px;
+}
+
+nav {
+  background: linear-gradient(
+    320deg,
+    rgb(11, 199, 237) 10%,
+    rgb(102, 102, 215) 50%,
+    rgb(107, 238, 210) 98%
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.bgdegre {
+    background: linear-gradient(
+        210deg,
+        rgb(184, 202, 232) 10%,
+        rgb(128, 154, 168) 50%,
+        rgb(169, 200, 243) 98%
+      );
+  }
+
+footer {
+  background: linear-gradient(
+    320deg,
+    rgb(11, 199, 237) 10%,
+    rgb(102, 102, 215) 50%,
+    rgb(107, 238, 210) 98%
+  );
+}
+

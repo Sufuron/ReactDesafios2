@@ -16,7 +16,7 @@ const Navbar = () => {
           exact
           activeClassName="btn-outline-secondary active"
           className="btn btn-outline-secondary text-decoration-none text-white"
-          to="/ImageApi"
+          to="/Photos"
         >
           Image
         </NavLink>
