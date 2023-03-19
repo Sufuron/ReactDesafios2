@@ -1,18 +1,37 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { PhotosContext } from "../components/ImageApi";
-import { useParams } from "react-router-dom";
+import IconHeart from "../components/IconHeart";
+import { GlobalStateContext } from "../components/GlobalStateContext";
 
-const PhotoDetails = () => {
+const Photos = () => {
   const { photos } = useContext(PhotosContext);
-  const { id } = useParams();
-  const photo = photos.find((photo) => photo.id === parseInt(id, 10));
+  const { favorites, setFavorites } = useContext(GlobalStateContext);
+
+  const handleFavoriteClick = (id) => {
+    if (favorites.includes(id)) {
+      setFavorites(favorites.filter((favorite) => favorite !== id));
+    } else {
+      setFavorites([...favorites, id]);
+    }
+  };
 
   return (
-    <div>
-      <h2>{photo.photographer}</h2>
-      <img src={photo.src.original} alt={photo.photographer} />
+    <div className="row">
+      {photos.map((photo) => (
+        <div key={photo.id} className="col-md-4 col-sm-6 col-lg-3 p-2">
+          <div className="card">
+            <img src={photo.src.large} alt={photo.alt} />
+            <div className="heart-icon">
+              <IconHeart
+                filled={favorites.includes(photo.id)}
+                onClick={() => handleFavoriteClick(photo.id)}
+              />
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default PhotoDetails;
+export default Photos;

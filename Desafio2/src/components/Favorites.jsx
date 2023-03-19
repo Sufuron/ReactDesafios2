@@ -1,8 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { GlobalStateContext } from "./GlobalStateContext";
+import { PhotosContext } from "./ImageApi";
 import IconHeart from "./IconHeart";
 
-const Favorites = ({ favorites, images, onFavoritesChange }) => {
+const Favorites = () => {
+  const { favorites, setFavorites } = useContext(GlobalStateContext);
+  const { photos: images } = useContext(PhotosContext);
   const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
@@ -12,6 +15,10 @@ const Favorites = ({ favorites, images, onFavoritesChange }) => {
       setShowFavorites(false);
     }
   }, [favorites]);
+
+  const handleFavoritesChange = (newFavorites) => {
+    setFavorites(newFavorites);
+  };
 
   return (
     <div>
@@ -27,7 +34,9 @@ const Favorites = ({ favorites, images, onFavoritesChange }) => {
                   <IconHeart
                     filled
                     onClick={() =>
-                      onFavoritesChange(favorites.filter((i) => i !== image.id))
+                      handleFavoritesChange(
+                        favorites.filter((i) => i !== image.id)
+                      )
                     }
                   />
                 </div>
@@ -38,4 +47,5 @@ const Favorites = ({ favorites, images, onFavoritesChange }) => {
     </div>
   );
 };
+
 export default Favorites;

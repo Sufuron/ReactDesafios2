@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -18,7 +18,15 @@ const Navbar = () => {
           className="btn btn-outline-secondary text-decoration-none text-white"
           to="/Photos"
         >
-          Image
+          Photos
+        </NavLink>
+        <NavLink
+          exact
+          activeClassName="btn-outline-secondary active"
+          className="btn btn-outline-secondary text-decoration-none text-white"
+          to="/favorites"
+        >
+          Favorites
         </NavLink>
         <NavLink
           exact

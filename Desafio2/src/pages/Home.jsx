@@ -32,7 +32,7 @@ const Home = () => {
       <br />
       <div className={`${isScaled ? "move-down" : ""}`}>
         <NavLink
-          to="/ImageApi"
+          to="/Photos"
           className="btn btn-outline-secondary"
         >
           <h5 className="text-justify text-center text-info mt-1">
